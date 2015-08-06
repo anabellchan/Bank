@@ -1,0 +1,69 @@
+﻿@model Bank.ViewModel.ClientBankAccount
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+@{
+    if (TempData.ContainsKey("errorMessage"))
+    {
+        <div class="alert alert-danger" role="alert">@Html.Raw(TempData["errorMessage"])</div>
+    }
+    if (TempData.ContainsKey("successMessage"))
+    {
+        <div class="alert alert-success" role="alert">@Html.Raw(TempData["successMessage"])</div>
+    }
+
+}
+<p>
+    @Html.ActionLink("Home", "Index")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.AccountNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ClientID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LastName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AccountType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Balance)
+        </th>
+        <th></th>
+    </tr>
+
+    <tr>
+        <td>
+            @Html.DisplayFor(model => model.AccountNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.ClientID)
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.LastName)
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.FirstName)
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.AccountType)
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.Balance)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id= Model.AccountNumber })
+        </td>
+    </tr>
+
+</table>

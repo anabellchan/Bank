@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BankModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="BankAccount">
+    <Key>
+      <PropertyRef Name="accountNum" />
+    </Key>
+    <Property Name="accountNum" Type="int" Nullable="false" />
+    <Property Name="accountType" Type="varchar" MaxLength="15" />
+    <Property Name="balance" Type="decimal" Precision="18" Scale="2" />
+  </EntityType>
+  <EntityType Name="Client">
+    <Key>
+      <PropertyRef Name="clientID" />
+    </Key>
+    <Property Name="clientID" Type="int" Nullable="false" />
+    <Property Name="lastName" Type="varchar" MaxLength="20" />
+    <Property Name="firstName" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="ClientAccount">
+    <Key>
+      <PropertyRef Name="clientID" />
+      <PropertyRef Name="accountNum" />
+    </Key>
+    <Property Name="clientID" Type="int" Nullable="false" />
+    <Property Name="accountNum" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FK__ClientAcc__accou__31EC6D26">
+    <End Role="BankAccount" Type="Self.BankAccount" Multiplicity="1" />
+    <End Role="ClientAccount" Type="Self.ClientAccount" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BankAccount">
+        <PropertyRef Name="accountNum" />
+      </Principal>
+      <Dependent Role="ClientAccount">
+        <PropertyRef Name="accountNum" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ClientAcc__clien__30F848ED">
+    <End Role="Client" Type="Self.Client" Multiplicity="1" />
+    <End Role="ClientAccount" Type="Self.ClientAccount" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Client">
+        <PropertyRef Name="clientID" />
+      </Principal>
+      <Dependent Role="ClientAccount">
+        <PropertyRef Name="clientID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="BankModelStoreContainer">
+    <EntitySet Name="BankAccount" EntityType="Self.BankAccount" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Client" EntityType="Self.Client" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ClientAccount" EntityType="Self.ClientAccount" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__ClientAcc__accou__31EC6D26" Association="Self.FK__ClientAcc__accou__31EC6D26">
+      <End Role="BankAccount" EntitySet="BankAccount" />
+      <End Role="ClientAccount" EntitySet="ClientAccount" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ClientAcc__clien__30F848ED" Association="Self.FK__ClientAcc__clien__30F848ED">
+      <End Role="Client" EntitySet="Client" />
+      <End Role="ClientAccount" EntitySet="ClientAccount" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
