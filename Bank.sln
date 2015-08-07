@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bank", "Bank\Bank.csproj", "{371E0ADC-CCAC-43B2-A0AD-D2B10EB9CB95}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bank", "..\..\SSDP\ASP\Day 2\Sandbox\3. Assignment - Bank App\Bank\Bank\Bank.csproj", "{371E0ADC-CCAC-43B2-A0AD-D2B10EB9CB95}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
