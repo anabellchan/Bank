@@ -1,6 +1,10 @@
 ﻿
 @{
     ViewBag.Title = "Index";
+    if (TempData.ContainsKey("Message"))
+    {
+        <p class="alert-info">@TempData["Message"]</p>
+    }
 }
 
 <div class="page-header">

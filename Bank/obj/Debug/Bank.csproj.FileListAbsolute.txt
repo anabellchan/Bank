@@ -32,3 +32,5 @@ C:\Users\Anabell\Documents\SSDP\ASP\Day 2\Sandbox\3. Assignment - Bank App\Bank\
 C:\Users\Anabell\Documents\SSDP\ASP\Day 2\Sandbox\3. Assignment - Bank App\Bank\Bank\obj\Debug\Bank.csprojResolveAssemblyReference.cache
 C:\Users\Anabell\Documents\SSDP\ASP\Day 2\Sandbox\3. Assignment - Bank App\Bank\Bank\obj\Debug\Bank.dll
 C:\Users\Anabell\Documents\SSDP\ASP\Day 2\Sandbox\3. Assignment - Bank App\Bank\Bank\obj\Debug\Bank.pdb
+C:\Users\Anabell\Documents\SSDP\ASP\Day 2\Sandbox\3. Assignment - Bank App\Bank\Bank\obj\Debug\Bank.Properties.Resources.resources
+C:\Users\Anabell\Documents\SSDP\ASP\Day 2\Sandbox\3. Assignment - Bank App\Bank\Bank\obj\Debug\Bank.csproj.GenerateResource.Cache

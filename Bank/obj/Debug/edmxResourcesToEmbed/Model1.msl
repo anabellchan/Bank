@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="BankModelStoreContainer" CdmEntityContainer="BankEntities">
+  <EntityContainerMapping StorageEntityContainer="BankOfRichmondModelStoreContainer" CdmEntityContainer="BankEntities">
     <EntitySetMapping Name="BankAccounts">
-      <EntityTypeMapping TypeName="BankModel.BankAccount">
+      <EntityTypeMapping TypeName="BankOfRichmondModel.BankAccount">
         <MappingFragment StoreEntitySet="BankAccount">
           <ScalarProperty Name="accountNum" ColumnName="accountNum" />
           <ScalarProperty Name="accountType" ColumnName="accountType" />
@@ -11,7 +11,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Clients">
-      <EntityTypeMapping TypeName="BankModel.Client">
+      <EntityTypeMapping TypeName="BankOfRichmondModel.Client">
         <MappingFragment StoreEntitySet="Client">
           <ScalarProperty Name="clientID" ColumnName="clientID" />
           <ScalarProperty Name="lastName" ColumnName="lastName" />
@@ -19,7 +19,7 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <AssociationSetMapping Name="ClientAccount" TypeName="BankModel.ClientAccount" StoreEntitySet="ClientAccount">
+    <AssociationSetMapping Name="ClientAccount" TypeName="BankOfRichmondModel.ClientAccount" StoreEntitySet="ClientAccount">
       <EndProperty Name="BankAccount">
         <ScalarProperty Name="accountNum" ColumnName="accountNum" />
       </EndProperty>

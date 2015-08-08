@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="BankModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="BankOfRichmondModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="BankAccount">
           <Key>
             <PropertyRef Name="accountNum" />
@@ -29,7 +29,7 @@
           <Property Name="clientID" Type="int" Nullable="false" />
           <Property Name="accountNum" Type="int" Nullable="false" />
         </EntityType>
-        <Association Name="FK__ClientAcc__accou__31EC6D26">
+        <Association Name="FK__ClientAcc__accou__1ED998B2">
           <End Role="BankAccount" Type="Self.BankAccount" Multiplicity="1" />
           <End Role="ClientAccount" Type="Self.ClientAccount" Multiplicity="*" />
           <ReferentialConstraint>
@@ -41,7 +41,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__ClientAcc__clien__30F848ED">
+        <Association Name="FK__ClientAcc__clien__1DE57479">
           <End Role="Client" Type="Self.Client" Multiplicity="1" />
           <End Role="ClientAccount" Type="Self.ClientAccount" Multiplicity="*" />
           <ReferentialConstraint>
@@ -53,15 +53,15 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="BankModelStoreContainer">
-          <EntitySet Name="BankAccount" EntityType="Self.BankAccount" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Client" EntityType="Self.Client" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="ClientAccount" EntityType="Self.ClientAccount" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK__ClientAcc__accou__31EC6D26" Association="Self.FK__ClientAcc__accou__31EC6D26">
+        <EntityContainer Name="BankOfRichmondModelStoreContainer">
+          <EntitySet Name="BankAccount" EntityType="Self.BankAccount" Schema="Pass" store:Type="Tables" />
+          <EntitySet Name="Client" EntityType="Self.Client" Schema="Pass" store:Type="Tables" />
+          <EntitySet Name="ClientAccount" EntityType="Self.ClientAccount" Schema="Pass" store:Type="Tables" />
+          <AssociationSet Name="FK__ClientAcc__accou__1ED998B2" Association="Self.FK__ClientAcc__accou__1ED998B2">
             <End Role="BankAccount" EntitySet="BankAccount" />
             <End Role="ClientAccount" EntitySet="ClientAccount" />
           </AssociationSet>
-          <AssociationSet Name="FK__ClientAcc__clien__30F848ED" Association="Self.FK__ClientAcc__clien__30F848ED">
+          <AssociationSet Name="FK__ClientAcc__clien__1DE57479" Association="Self.FK__ClientAcc__clien__1DE57479">
             <End Role="Client" EntitySet="Client" />
             <End Role="ClientAccount" EntitySet="ClientAccount" />
           </AssociationSet>
@@ -70,7 +70,7 @@
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="BankModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="BankOfRichmondModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="BankAccount">
           <Key>
             <PropertyRef Name="accountNum" />
@@ -106,9 +106,9 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="BankModelStoreContainer" CdmEntityContainer="BankEntities">
+        <EntityContainerMapping StorageEntityContainer="BankOfRichmondModelStoreContainer" CdmEntityContainer="BankEntities">
           <EntitySetMapping Name="BankAccounts">
-            <EntityTypeMapping TypeName="BankModel.BankAccount">
+            <EntityTypeMapping TypeName="BankOfRichmondModel.BankAccount">
               <MappingFragment StoreEntitySet="BankAccount">
                 <ScalarProperty Name="accountNum" ColumnName="accountNum" />
                 <ScalarProperty Name="accountType" ColumnName="accountType" />
@@ -117,7 +117,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Clients">
-            <EntityTypeMapping TypeName="BankModel.Client">
+            <EntityTypeMapping TypeName="BankOfRichmondModel.Client">
               <MappingFragment StoreEntitySet="Client">
                 <ScalarProperty Name="clientID" ColumnName="clientID" />
                 <ScalarProperty Name="lastName" ColumnName="lastName" />
@@ -125,7 +125,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <AssociationSetMapping Name="ClientAccount" TypeName="BankModel.ClientAccount" StoreEntitySet="ClientAccount">
+          <AssociationSetMapping Name="ClientAccount" TypeName="BankOfRichmondModel.ClientAccount" StoreEntitySet="ClientAccount">
             <EndProperty Name="BankAccount">
               <ScalarProperty Name="accountNum" ColumnName="accountNum" />
             </EndProperty>

@@ -29,7 +29,10 @@ namespace Bank.Controllers
         {
             if (accountType == null)
             {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                //ViewBag.Message = "Account Type: " + accountType + "!";
+                TempData["Message"] = "Account Type: " + accountType + "!";
+                return RedirectToAction("Index");
+//                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             var query = bankRep.ListAccounts(accountType);
             ViewBag.Title = accountType + " Bank Accounts";
